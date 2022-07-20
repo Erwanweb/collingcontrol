@@ -193,7 +193,7 @@ class BasePlugin:
     def readTemps(self):
 
         # set update flag for next temp update
-        is self.autocooling :
+        if self.autocooling :
             if not self.cooling :
                 self.nexttemps = datetime.now() + timedelta(minutes=1)
             else :
