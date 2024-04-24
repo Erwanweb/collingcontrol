@@ -218,7 +218,7 @@ class BasePlugin:
         # fetch all the devices from the API and scan for sensors
         noerror = True
         listintemps = []
-        devicesAPI = DomoticzAPI("type=devices&filter=temp&used=true&order=Name")
+        devicesAPI = DomoticzAPI("type=command&param=getdevices&filter=temp&used=true&order=Name")
         if devicesAPI:
             for device in devicesAPI["result"]:  # parse the devices for temperature sensors
                 idx = int(device["idx"])
